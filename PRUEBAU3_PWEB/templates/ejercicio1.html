@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 1</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+</head>
+<body>
+<div>
+    <h1>Formulario de Notas</h1>
+
+    <form class=form action="/ejercicio1" method="post">
+        <label for="nota_1">Nota 1:</label>
+        <br>
+        <input type="number" id="nota_1" name="nota_1" min="10" max="70" required value="{{request.form.nota_1 if request.form.nota_1}}">
+        <br><br>
+        <label for="nota_2">Nota 2:</label>
+        <br>
+        <input type="number" id="nota_2" name="nota_2" min="10" max="70" required value="{{request.form.nota_2 if request.form.nota_2}}">
+        <br><br>
+        <label for="nota_3">Nota 3:</label>
+        <br>
+        <input type="number" id="nota_3" name="nota_3" min="10" max="70" required value="{{request.form.nota_3 if request.form.nota_3}}">
+        <br><br>
+        <label for="asistencia">Asistencia (%):</label>
+        <br>
+        <input type="number" id="asistencia" name="asistencia" min="0" max="100" required value="{{request.form.asistencia if request.form.asistencia}}">
+        <br><br>
+        <button class= buttonf type="submit">Enviar</button>
+
+        {% if resultado, estado %}
+        <div>
+            <p>{{resultado}}</p>
+            <p>{{estado}}</p>
+        </div>
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>

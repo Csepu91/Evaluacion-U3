@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ejercicio 2</title>
+    <link rel="stylesheet" type="text/css" href="/static/css/estilos.css">
+</head>
+<body>
+<div>
+    <h1>Formulario de Nombres</h1>
+    <form class =form action="/ejercicio2" method="post">
+        <label for="nombre_1">Nombre 1:</label>
+        <br>
+        <input type="text" id="nombre_1" name="nombre_1" required value="{{request.form.nombre_1 if request.form.nombre_1}}">
+        <br><br>
+        <label for="nombre_2">Nombre 2:</label>
+        <br>
+        <input type="text" id="nombre_2" name="nombre_2" required value="{{request.form.nombre_2 if request.form.nombre_2}}">
+        <br><br>
+        <label for="nombre_3">Nombre 3:</label>
+        <br>
+        <input type="text" id="nombre_3" name="nombre_3" required value="{{request.form.nombre_3 if request.form.nombre_3}}">
+        <br><br>
+        <button class=buttonf type="submit">Enviar</button>
+
+        {% if oracion, ext %}
+        <div>
+            <p>{{oracion}}</p>
+            <p>{{ext}}</p>
+        </div>
+        {% endif %}
+    </form>
+</div>
+</body>
+</html>
